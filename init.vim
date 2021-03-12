@@ -24,6 +24,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'rafi/awesome-vim-colorschemes'
 Plug 'puremourning/vimspector'
 Plug 'mhinz/vim-startify'
+Plug 'wellle/tmux-complete.vim'
 call plug#end()
 
 "let g:gruvbox_contrast_dark = 'hard'
