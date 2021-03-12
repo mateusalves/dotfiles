@@ -1,5 +1,5 @@
 call plug#begin()
-Plug 'morhetz/gruvbox'
+"Plug 'morhetz/gruvbox'
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'sheerun/vim-polyglot'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -7,7 +7,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'w0rp/ale'
 Plug 'jiangmiao/auto-pairs'
-Plug 'ThePrimeagen/vim-be-good' 
+Plug 'ThePrimeagen/vim-be-good'
 Plug 'preservim/nerdtree'
 Plug 'tsony-tsonev/nerdtree-git-plugin'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
@@ -23,11 +23,12 @@ Plug 'vim-syntastic/syntastic'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'rafi/awesome-vim-colorschemes'
 Plug 'puremourning/vimspector'
+Plug 'mhinz/vim-startify'
 call plug#end()
 
-let g:gruvbox_contrast_dark = 'hard'
-colorscheme gruvbox
-set background=dark
+"let g:gruvbox_contrast_dark = 'hard'
+"colorscheme gruvbox
+"set background=dark
 
 set hidden
 set number
@@ -44,7 +45,9 @@ nnoremap <c-p> :Files<cr>
 nnoremap <c-f> :Ag<space>
 nnoremap <c-s> :w<cr>
 
-nnoremap <C-b> :NERDTreeToggle<cr>
+nnoremap <c-b> :NERDTreeToggle<cr>
+nnoremap <c-q> :q!<cr>
+nnoremap <c-w> :wq<cr>
 
 map <C-z> <plug>NERDCommenterToggle<CR>
 
@@ -59,8 +62,11 @@ nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
 " moves current line down or up
-nnoremap <leader>- ddp
-nnoremap <leader>_ ddkP
+nnoremap <leader>] ddp
+nnoremap <leader>[ ddkP
+
+nnoremap <leader>. :bn<cr>
+nnoremap <leader>, :bp<cr>
 
 nnoremap <leader>+ :vertical resize +5<CR>
 nnoremap <leader>- :vertical resize -5<CR>
@@ -111,6 +117,10 @@ set autoindent " enable auto indentation of lines
 set smartindent " allow vim to best-effort guess the indentation
 set pastetoggle=<F2> " enable paste mode
 set showmatch "highlights matching brackets
+
+" Enable folding
+set foldmethod=indent
+set foldlevel=99
 
 " Use compact syntax for prettified multi-line comments
 let g:NERDCompactSexyComs = 1
@@ -205,6 +215,37 @@ colorscheme jellybeans
 let g:syntastic_cpp_compiler = 'clang++'
 let g:syntastic_cpp_compiler_options = ' -std=c++11'
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""'''
+"let g:startify_custom_header = [
+"  \'',
+"  \'',
+"  \'',
+"  \'',
+"  \'',
+"  \'',
+"  \'',
+"  \'',
+"  \]
+let g:startify_bookmarks = [
+  \ '~/.config/nvim/init.vim',
+  \ '~/.bashrc',
+  \ ]
+
+let g:startify_list_order = [
+    \ ['   My most recently:'],
+    \ 'files',
+    \ ['   Sessions:'],
+    \ 'sessions',
+    \ ['   Current Dir:'],
+    \ 'dir',
+    \ ['   These are my bookmarks:'],
+    \ 'bookmarks',
+    \ ]
+
+let g:startify_files_number = 5
+let g:startify_dir_number = 5
+let g:startify_session_persistence = 1
+let g:startify_change_to_dir = 1
 
 " To Play Vim be good type in a empty file:
 " :VimBeGood
