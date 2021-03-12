@@ -7,11 +7,9 @@ Plug 'junegunn/fzf.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'w0rp/ale'
 Plug 'jiangmiao/auto-pairs'
-Plug 'ThePrimeagen/vim-be-good'
 Plug 'preservim/nerdtree'
 Plug 'tsony-tsonev/nerdtree-git-plugin'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-Plug 'ryanoasis/vim-devicons'
 Plug 'preservim/nerdcommenter'
 Plug 'airblade/vim-gitgutter'
 Plug 'christoomey/vim-tmux-navigator'
@@ -25,6 +23,8 @@ Plug 'rafi/awesome-vim-colorschemes'
 Plug 'puremourning/vimspector'
 Plug 'mhinz/vim-startify'
 Plug 'wellle/tmux-complete.vim'
+Plug 'ryanoasis/vim-devicons'
+Plug 'ThePrimeagen/vim-be-good'
 call plug#end()
 
 "let g:gruvbox_contrast_dark = 'hard'
@@ -36,11 +36,15 @@ set number
 set relativenumber
 set mouse=a
 set inccommand=split
+set clipboard=unnamedplus " public copy/paste register
 
 let mapleader="\<space>"
 nnoremap <leader>; A;<esc>
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
+
+nnoremap <leader>sh :split<cr>
+nnoremap <leader>sj :vsplit<cr>
 
 nnoremap <c-p> :Files<cr>
 nnoremap <c-f> :Ag<space>
@@ -65,6 +69,9 @@ nmap <silent> gr <Plug>(coc-references)
 " moves current line down or up
 nnoremap <leader>] ddp
 nnoremap <leader>[ ddkP
+
+vnoremap <leader>y "+y
+nnoremap <leader>Y gg"+yG
 
 nnoremap <leader>. :bn<cr>
 nnoremap <leader>, :bp<cr>
@@ -111,7 +118,6 @@ set colorcolumn=80
 highlight ColorColumn ctermbg=0 guibg=lightgrey
 set signcolumn=yes
 
-set clipboard=unnamed " public copy/paste register
 set ruler
 set backspace=indent,eol,start " let backspace delete over lines
 set autoindent " enable auto indentation of lines
@@ -217,6 +223,12 @@ let g:syntastic_cpp_compiler = 'clang++'
 let g:syntastic_cpp_compiler_options = ' -std=c++11'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""'''
+
+let g:startify_files_number = 5
+let g:startify_dir_number = 5
+let g:startify_session_persistence = 1
+let g:startify_change_to_dir = 1
+
 "let g:startify_custom_header = [
 "  \'',
 "  \'',
@@ -242,11 +254,6 @@ let g:startify_list_order = [
     \ ['   These are my bookmarks:'],
     \ 'bookmarks',
     \ ]
-
-let g:startify_files_number = 5
-let g:startify_dir_number = 5
-let g:startify_session_persistence = 1
-let g:startify_change_to_dir = 1
 
 " To Play Vim be good type in a empty file:
 " :VimBeGood
