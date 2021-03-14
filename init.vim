@@ -173,7 +173,7 @@ if !exists('g:airline_symbols')
     let g:airline_symbols = {}
 endif
 
-let g:airline_section_b = airline#section#create(['%{sy#repo#get_stats_decorated()}',' » ','%{fugitive#head()}'])
+"let g:airline_section_b = airline#section#create(['%{sy#repo#get_stats_decorated()}',' » ','%{fugitive#head()}'])
 let g:airline_section_x = '%{strftime("%x, %H:%M")}'
 " unicode symbols
 "let g:airline_left_sep = '»'
