@@ -16,6 +16,7 @@ Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'preservim/nerdcommenter'
 Plug 'airblade/vim-gitgutter'
 "Plug 'mhinz/vim-signify'
+Plug 'tpope/vim-rhubarb'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'APZelos/blamer.nvim'
@@ -82,13 +83,16 @@ nnoremap <leader>+ :vertical resize +5<CR>
 nnoremap <leader>- :vertical resize -5<CR>
 nnoremap <leader>rp :resize 100<CR>
 
+nnoremap <leader>tl :ALEToggle<CR>
+
 nmap <leader>gf :diffget //2<CR>
 nmap <leader>gh :diffget //3<CR>
 " get status
-nmap <leader>gs :G<CR>
+nmap <leader>gs :vertical G<CR>
 
 set smarttab
 set cindent
+set exrc
 set tabstop=4 softtabstop=4
 set shiftwidth=2
 set expandtab
@@ -159,6 +163,32 @@ nmap <leader>di <Plug>VimspectorBalloonEval
 xmap <leader>di <Plug>VimspectorBalloonEval
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""'''
+let g:ale_sign_error = '>>'
+let g:ale_sign_warning = '--'
+"highlight clear ALEErrorSign
+"highlight clear ALEWarningSign
+"let g:ale_set_highlights = 0
+" Set this in your vimrc file to disabling highlighting
+let g:airline#extensions#ale#enabled = 1
+let g:ale_echo_msg_error_str = 'E'
+let g:ale_echo_msg_warning_str = 'W'
+let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+let g:ale_enabled = 0
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""'''
+nmap ghj <Plug>(GitGutterNextHunk)
+nmap ghk <Plug>(GitGutterPrevHunk)
+nmap ghs <Plug>(GitGutterStageHunk)
+nmap ghu <Plug>(GitGutterUndoHunk)
+nmap ghp <Plug>(GitGutterPreviewHunk)
+
+nmap <leader>tgh :GitGutterLineHighlightsToggle<CR>
+let g:gitgutter_show_msg_on_hunk_jumping = 1
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""'''
+nnoremap <leader>gds :vertical Gdiffsplit<CR>
+nnoremap <leader>gb :GBrowse<CR>
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""'''
+
 let g:blamer_enabled = 1
 let g:blamer_delay = 500
 
@@ -176,28 +206,11 @@ endif
 "let g:airline_section_b = airline#section#create(['%{sy#repo#get_stats_decorated()}',' » ','%{fugitive#head()}'])
 let g:airline_section_x = '%{strftime("%x, %H:%M")}'
 " unicode symbols
-"let g:airline_left_sep = '»'
 let g:airline_left_sep = '▶'
-"let g:airline_right_sep = '«'
 let g:airline_right_sep = '◀'
-"let g:airline_symbols.linenr = '␊'
-"let g:airline_symbols.linenr = '␤'
-"let g:airline_symbols.linenr = '¶'
 let g:airline_symbols.branch = '⎇'
 let g:airline_symbols.paste = 'ρ'
-"let g:airline_symbols.paste = 'Þ'
-"let g:airline_symbols.paste = '∥'
 let g:airline_symbols.whitespace = 'Ξ'
-
-" airline symbols
-"let g:airline_left_sep = ''
-"let g:airline_left_alt_sep = ''
-"let g:airline_right_sep = ''
-"let g:airline_right_alt_sep = ''
-"let g:airline_symbols.branch = ''
-"let g:airline_symbols.readonly = ''
-"let g:airline_symbols.linenr = ''
-
 
 "true colours
 set background=dark
