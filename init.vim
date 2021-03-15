@@ -92,6 +92,8 @@ nmap <leader>gf :diffget //2<CR>
 nmap <leader>gh :diffget //3<CR>
 " get status
 nmap <leader>gs :vertical G<CR>
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<cR>gv=gv
 
 set smarttab
 set cindent
