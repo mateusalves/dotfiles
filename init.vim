@@ -46,12 +46,15 @@ nnoremap <leader>; A;<esc>
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
 
+inoremap <C-c> <esc>
+
 nnoremap <leader>sh :split<cr>
 nnoremap <leader>sj :vsplit<cr>
 
 nnoremap <c-p> :Files<cr>
 nnoremap <c-f> :Ag<space>
 nnoremap <c-s> :w<cr>
+inoremap <c-s> <ESC>:w<CR>
 
 nnoremap <c-b> :NERDTreeToggle<cr>
 nnoremap <c-q> :q!<cr>
