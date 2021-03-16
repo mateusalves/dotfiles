@@ -42,7 +42,7 @@ set inccommand=split
 set clipboard=unnamedplus " public copy/paste register
 
 let mapleader="\<space>"
-nnoremap <leader>; A;<esc>
+"nnoremap <leader>; A;<esc>
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
 
@@ -67,6 +67,8 @@ map <C-z> <plug>NERDCommenterToggle<CR>
 inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
                               \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
+let g:coc_node_path = '/usr/bin/nodejs'
+
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
@@ -81,6 +83,7 @@ nnoremap <leader>Y gg"+yG
 
 nnoremap <leader>. :bn<cr>
 nnoremap <leader>, :bp<cr>
+nnoremap <leader>; :bd<cr>
 
 nnoremap <leader>+ :vertical resize +5<CR>
 nnoremap <leader>- :vertical resize -5<CR>
@@ -209,7 +212,7 @@ if !exists('g:airline_symbols')
 endif
 
 "let g:airline_section_b = airline#section#create(['%{sy#repo#get_stats_decorated()}',' » ','%{fugitive#head()}'])
-let g:airline_section_x = '%{strftime("%x, %H:%M")}'
+"let g:airline_section_x = '%{strftime("%x, %H:%M")}'
 " unicode symbols
 let g:airline_left_sep = '▶'
 let g:airline_right_sep = '◀'
@@ -232,7 +235,9 @@ let g:startify_change_to_dir = 1
 
 let g:startify_bookmarks = [
   \ '~/.config/nvim/init.vim',
+  \ '~/.zshrc',
   \ '~/.bashrc',
+  \ '~/.tmux.conf',
   \ ]
 
 let g:startify_list_order = [
