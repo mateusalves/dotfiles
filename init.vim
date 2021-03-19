@@ -42,7 +42,7 @@ set inccommand=split
 set clipboard=unnamedplus " public copy/paste register
 
 let mapleader="\<space>"
-"nnoremap <leader>; A;<esc>
+nnoremap <leader>; A;<esc>
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
 
@@ -83,7 +83,7 @@ nnoremap <leader>Y gg"+yG
 
 nnoremap <leader>. :bn<cr>
 nnoremap <leader>, :bp<cr>
-nnoremap <leader>; :bd<cr>
+nnoremap <leader>m :bd<cr>
 
 nnoremap <leader>+ :vertical resize +5<CR>
 nnoremap <leader>- :vertical resize -5<CR>
@@ -212,7 +212,7 @@ if !exists('g:airline_symbols')
 endif
 
 "let g:airline_section_b = airline#section#create(['%{sy#repo#get_stats_decorated()}',' » ','%{fugitive#head()}'])
-"let g:airline_section_x = '%{strftime("%x, %H:%M")}'
+let g:airline_section_x = '%{strftime("%x, %H:%M")}'
 " unicode symbols
 let g:airline_left_sep = '▶'
 let g:airline_right_sep = '◀'
@@ -224,7 +224,8 @@ let g:airline_symbols.whitespace = 'Ξ'
 set background=dark
 set t_Co=256
 
-colorscheme jellybeans
+"colorscheme jellybeans
+colorscheme purify
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""'''
 

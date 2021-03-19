@@ -3,6 +3,7 @@
 
 # Path to your oh-my-zsh installation.
 export ZSH="/home/mateus/.oh-my-zsh"
+#export ZSH="/home/pi/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -10,10 +11,10 @@ export ZSH="/home/mateus/.oh-my-zsh"
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 #ZSH_THEME="robbyrussell"
 #ZSH_THEME="agnoster"
-ZSH_THEME="awesomepanda"
+#ZSH_THEME="awesomepanda"
 #ZSH_THEME="af-magic"
 #ZSH_THEME="simple"
-#ZSH_THEME="risto"
+ZSH_THEME="risto"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
