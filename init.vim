@@ -72,8 +72,9 @@ augroup compileandrun
     autocmd!
     autocmd filetype python nnoremap <leader><f4> :w <bar> :!python3 % <cr>
     autocmd filetype cpp nnoremap <leader><f4> :w <bar> !g++ -std=c++1z % <cr> :vnew <bar> :term "./a.out" <cr><cr>
-    "-std=c++1x #2011 -std=c++1y #2014 -std=c++1z #2017 -std=c++2a #2020
+    autocmd filetype c nnoremap <leader><f4> :w <bar> !gcc -Wall % <cr> :vnew <bar> :term "./a.out" <cr><cr>
     "autocmd filetype c nnoremap <leader><f4> :w <bar> !make %:r && ./%:r <cr>
+    "-std=c++1x #2011 -std=c++1y #2014 -std=c++1z #2017 -std=c++2a #2020
 augroup END
 
 " Make <CR> auto-select the first completion item and notify coc.nvim to
