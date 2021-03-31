@@ -60,7 +60,9 @@ inoremap <c-s> <ESC>:w<CR>
 
 nnoremap <c-b> :NERDTreeToggle<cr>
 nnoremap <leader>w :wq<cr>
+nnoremap <c-w> :wq<cr>
 nnoremap <leader>q :q!<cr>
+nnoremap <c-q> :q!<cr>
 nnoremap <leader><F3> :q!<cr>
 nnoremap <leader>vt :vsplit <bar> :term<cr>
 nnoremap <leader>ht :set splitbelow <bar> :split <bar> :term<cr>
