@@ -20,6 +20,7 @@ Plug 'tpope/vim-rhubarb'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'APZelos/blamer.nvim'
+"Plug 'ycm-core/YouCompleteMe'
 Plug 'tpope/vim-surround'
 Plug 'vim-syntastic/syntastic'
 Plug 'rafi/awesome-vim-colorschemes'
@@ -40,6 +41,7 @@ set relativenumber
 set mouse=a
 set inccommand=split
 set clipboard=unnamedplus " public copy/paste register
+set splitright
 
 let mapleader="\<space>"
 nnoremap <leader>; A;<esc>
@@ -57,10 +59,21 @@ nnoremap <c-s> :w<cr>
 inoremap <c-s> <ESC>:w<CR>
 
 nnoremap <c-b> :NERDTreeToggle<cr>
-nnoremap <c-q> :q!<cr>
-nnoremap <c-w> :wq<cr>
+nnoremap <leader>w :wq<cr>
+nnoremap <leader>q :q!<cr>
+nnoremap <leader><F3> :q!<cr>
+nnoremap <leader>t :vsplit <bar> :term<cr>
 
 map <C-z> <plug>NERDCommenterToggle<CR>
+
+" run code for CP
+augroup compileandrun
+    autocmd!
+    autocmd filetype python nnoremap <leader><f4> :w <bar> :!python3 % <cr>
+    autocmd filetype cpp nnoremap <leader><f4> :w <bar> !g++ -std=c++1z % <cr> :vnew <bar> :term "./a.out" <cr><cr>
+    "-std=c++1x #2011 -std=c++1y #2014 -std=c++1z #2017 -std=c++2a #2020
+    "autocmd filetype c nnoremap <leader><f4> :w <bar> !make %:r && ./%:r <cr>
+augroup END
 
 " Make <CR> auto-select the first completion item and notify coc.nvim to
 " format on enter, <cr> could be remapped by other vim plugin
