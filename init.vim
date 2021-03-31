@@ -62,7 +62,8 @@ nnoremap <c-b> :NERDTreeToggle<cr>
 nnoremap <leader>w :wq<cr>
 nnoremap <leader>q :q!<cr>
 nnoremap <leader><F3> :q!<cr>
-nnoremap <leader>t :vsplit <bar> :term<cr>
+nnoremap <leader>vt :vsplit <bar> :term<cr>
+nnoremap <leader>ht :set splitbelow <bar> :split <bar> :term<cr>
 
 map <C-z> <plug>NERDCommenterToggle<CR>
 
