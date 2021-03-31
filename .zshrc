@@ -12,9 +12,10 @@ export ZSH="/home/mateus/.oh-my-zsh"
 #ZSH_THEME="robbyrussell"
 #ZSH_THEME="agnoster"
 #ZSH_THEME="awesomepanda"
-#ZSH_THEME="af-magic"
+ZSH_THEME="af-magic"
 #ZSH_THEME="simple"
-ZSH_THEME="risto"
+#ZSH_THEME="risto"
+#ZSH_THEME="bureau"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -108,3 +109,4 @@ source $ZSH/oh-my-zsh.sh
 alias vim=nvim
 alias vi=nvim
 alias v=nvim
+alias e=exit
