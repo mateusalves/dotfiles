@@ -1,12 +1,12 @@
 call plug#begin()
-"Plug 'morhetz/gruvbox'
+Plug 'morhetz/gruvbox'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'sheerun/vim-polyglot'
 Plug 'w0rp/ale'
 Plug 'jiangmiao/auto-pairs'
@@ -31,9 +31,8 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'ThePrimeagen/vim-be-good'
 call plug#end()
 
-"let g:gruvbox_contrast_dark = 'hard'
-"colorscheme gruvbox
-"set background=dark
+let g:gruvbox_contrast_dark = 'hard'
+set background=dark
 
 set hidden
 set number
@@ -73,7 +72,8 @@ map <C-z> <plug>NERDCommenterToggle<CR>
 augroup compileandrun
     autocmd!
     autocmd filetype python nnoremap <leader><f4> :w <bar> :!python3 % <cr>
-    autocmd filetype cpp nnoremap <leader><f4> :w <bar> !g++ -std=c++1z % <cr> :vnew <bar> :term "./a.out" <cr><cr>
+    autocmd filetype cpp nnoremap <leader><f4> :w <bar> !g++ -std=c++2a % <cr> :vnew <bar> :term "./a.out" <cr><cr>
+    autocmd filetype cpp nnoremap <leader><f5> :w <bar> !g++ -g -Wall -std=c++1z % <cr><cr>
     autocmd filetype c nnoremap <leader><f4> :w <bar> !gcc -Wall % <cr> :vnew <bar> :term "./a.out" <cr><cr>
     "autocmd filetype c nnoremap <leader><f4> :w <bar> !make %:r && ./%:r <cr>
     "-std=c++1x #2011 -std=c++1y #2014 -std=c++1z #2017 -std=c++2a #2020
@@ -84,12 +84,13 @@ augroup END
 inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
                               \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
-let g:coc_node_path = '/usr/bin/nodejs'
+let g:coc_node_path = '/usr/bin/node'
 
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
+nmap <leader>gd <Plug>(coc-definition)
+nmap <leader>gy <Plug>(coc-type-definition)
+nmap <leader>gi <Plug>(coc-implementation)
+nmap <leader>gr <Plug>(coc-references)
+nnoremap <leader><c-p> :GFiles<cr>
 
 " moves current line down or up
 nnoremap <leader>] ddp
@@ -109,7 +110,7 @@ nnoremap <leader>rp :resize 100<CR>
 nnoremap <leader>tl :ALEToggle<CR>
 
 nmap <leader>gf :diffget //2<CR>
-nmap <leader>gh :diffget //3<CR>
+nmap <leader>gj :diffget //3<CR>
 " get status
 nmap <leader>gs :vertical G<CR>
 vnoremap J :m '>+1<CR>gv=gv
@@ -242,7 +243,8 @@ set background=dark
 set t_Co=256
 
 "colorscheme jellybeans
-colorscheme purify
+"colorscheme purify
+colorscheme gruvbox
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""'''
 
