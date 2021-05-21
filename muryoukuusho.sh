@@ -29,7 +29,7 @@ fi
 
 echo "Installing other dependencies."
 sudo apt install -y silversearcher-ag
-sudo snap install ccls
+sudo snap install --classic ccls
 python3 -m pip install pynvim
 
 cp coc-settings.json ~/.config/nvim/coc-settings.json
