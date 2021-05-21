@@ -2,13 +2,6 @@ echo "Updating and installing essential tools."
 sudo apt update && sudo apt -y upgrade && sudo apt autoremove
 sudo apt install -y build-essential libssl-dev libffi-dev python3-dev python3-pip
 
-echo "Installing oh my zsh."
-sudo rm -r ~/.oh-my-zsh
-sudo apt install -y zsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-sudo mv ~/.zshrc ~/.zshrc.backup
-sudo cp .zshrc ~/.zshrc
-
 #Installing tmux
 sudo apt install -y tmux
 sudo mv ~/.tmux.conf ~/.tmux.conf.backup
@@ -40,4 +33,12 @@ sudo snap install ccls
 python3 -m pip install pynvim
 
 cp coc-settings.json ~/.config/nvim/coc-settings.json
+
+echo "Installing oh my zsh."
+sudo rm -r ~/.oh-my-zsh
+sudo mv ~/.zshrc ~/.zshrc.backup
+sudo cp .zshrc ~/.zshrc
+sudo apt install -y zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
 echo "Done."
