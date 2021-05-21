@@ -6,10 +6,11 @@ echo "Installing oh my zsh."
 sudo rm -r ~/.oh-my-zsh
 sudo apt install -y zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
-sudo rm ~/.zshrc
-sudo cp .zshrc ~/.zshrc
-chsh -s $(which zsh)
-sudo chsh -s $(which zsh)
+#sudo rm ~/.zshrc
+#sudo cp .zshrc ~/.zshrc
+#chsh -s $(which zsh)
+#sudo chsh -s $(which zsh)
+#Mudar a linha se for da rasp e rebootar
 
 echo "Installing tmux."
 sudo apt install -y tmux
