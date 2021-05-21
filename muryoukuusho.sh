@@ -3,6 +3,7 @@ sudo apt update && sudo apt -y upgrade && sudo apt autoremove
 sudo apt install -y build-essential libssl-dev libffi-dev python3-dev python3-pip
 
 echo "Installing oh my zsh."
+sudo rm -f ~/.oh-my-zsh
 sudo apt install -y zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 sudo mv ~/.zshrc ~/.zshrc.backup
@@ -34,7 +35,8 @@ else
 fi
 
 echo "Installing other dependencies."
-sudo apt install -y silversearcher-ag ccls
+sudo apt install -y silversearcher-ag
+sudo snap install ccls
 python3 -m pip install pynvim
 
 cp coc-settings.json ~/.config/nvim/coc-settings.json
