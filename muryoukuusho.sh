@@ -1,8 +1,10 @@
-echo "Updating and installing essential tools."
+BLUE=$(printf '\033[34m')
+
+echo "${BLUE}Updating and installing essential tools."
 sudo apt update && sudo apt -y upgrade && sudo apt -y autoremove
 sudo apt install -y build-essential libssl-dev libffi-dev python3-dev python3-pip xclip
 
-echo "Installing oh my zsh."
+echo "${BLUE}Installing oh my zsh."
 sudo rm -r ~/.oh-my-zsh
 sudo apt install -y zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
@@ -12,7 +14,7 @@ sudo rm ~/.zshrc
 sudo cp .zshrc ~
 chsh -s $(which zsh)
 
-echo "Installing tmux."
+echo "${BLUE}Installing tmux."
 sudo apt install -y tmux
 sudo mv ~/.tmux.conf ~/.tmux.conf.backup
 sudo cp .tmux.conf ~
@@ -26,22 +28,22 @@ done
 
 if [ $rasp ]
 then
-  echo "Installing nvim on Raspberry."
+  echo "${BLUE}Installing nvim on Raspberry."
   sudo apt install -y snapd
   sudo snap install --classic nvim
-  sudo cp /snap/bin/nvim /usr/local/bin/nvim
+  sudo cp /snap/bin/nvim /usr/local/bin/
 else
-  echo "Installing nvim on PC."
+  echo "${BLUE}Installing nvim on PC."
   curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
-  sudo mv nvim.appimage /usr/local/bin/nvim
+  sudo mv nvim.appimage /usr/local/bin/
   chmod +x /usr/local/bin/nvim
 fi
 
-echo "Installing other dependencies."
+echo "${BLUE}Installing other dependencies."
 sudo apt install -y silversearcher-ag
 sudo snap install --classic ccls
 python3 -m pip install pynvim
 
-cp coc-settings.json ~/.config/nvim/coc-settings.json
+cp coc-settings.json ~/.config/nvim/
 
-echo "Done."
+echo "${BLUE}Done."
