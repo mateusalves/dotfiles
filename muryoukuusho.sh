@@ -44,6 +44,9 @@ sudo apt install -y silversearcher-ag
 sudo snap install --classic ccls
 python3 -m pip install pynvim
 
-cp coc-settings.json ~/.config/nvim/
+sudo mkdir ~/.config/nvim/
+sudo cp init.nvim ~/.config/nvim/
+sudo cp -r autoload/ ~/.config/nvim/
+sudo cp coc-settings.json ~/.config/nvim/
 
 echo "${BLUE}Done."
