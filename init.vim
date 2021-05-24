@@ -28,7 +28,7 @@ Plug 'puremourning/vimspector'
 Plug 'mhinz/vim-startify'
 Plug 'wellle/tmux-complete.vim'
 Plug 'ryanoasis/vim-devicons'
-Plug 'ThePrimeagen/vim-be-good'
+"Plug 'ThePrimeagen/vim-be-good'
 call plug#end()
 
 let g:gruvbox_contrast_dark = 'hard'
