@@ -1,6 +1,6 @@
 echo "Updating and installing essential tools."
 sudo apt update && sudo apt -y upgrade && sudo apt -y autoremove
-sudo apt install -y build-essential libssl-dev libffi-dev python3-dev python3-pip
+sudo apt install -y build-essential libssl-dev libffi-dev python3-dev python3-pip xclip
 
 echo "Installing oh my zsh."
 sudo rm -r ~/.oh-my-zsh
