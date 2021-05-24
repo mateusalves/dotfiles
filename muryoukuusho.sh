@@ -9,13 +9,13 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 git clone git://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 sudo rm ~/.zshrc
-sudo cp .zshrc ~/.zshrc
+sudo cp .zshrc ~
 chsh -s $(which zsh)
 
 echo "Installing tmux."
 sudo apt install -y tmux
 sudo mv ~/.tmux.conf ~/.tmux.conf.backup
-sudo cp .tmux.conf ~/.tmux.conf
+sudo cp .tmux.conf ~
 
 while getopts t: flag
 do
