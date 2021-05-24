@@ -2,22 +2,22 @@ BLUE=$(printf '\033[34m')
 
 echo "${BLUE}Updating and installing essential tools."
 sudo apt update && sudo apt -y upgrade && sudo apt -y autoremove
-sudo apt install -y build-essential libssl-dev libffi-dev python3-dev python3-pip xclip
+sudo apt install -y build-essential libssl-dev libffi-dev python3-dev python3-pip xclip nodejs
 
 echo "${BLUE}Installing oh my zsh."
-sudo rm -r ~/.oh-my-zsh
+sudo rm -r $HOME/.oh-my-zsh
 sudo apt install -y zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
-git clone git://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-sudo rm ~/.zshrc
-sudo cp .zshrc ~
+sudo rm $HOME/.zshrc
+sudo cp .zshrc $HOME
 chsh -s $(which zsh)
 
 echo "${BLUE}Installing tmux."
 sudo apt install -y tmux
-sudo mv ~/.tmux.conf ~/.tmux.conf.backup
-sudo cp .tmux.conf ~
+sudo mv $HOME/.tmux.conf $HOME/.tmux.conf.backup
+sudo cp .tmux.conf $HOME
 
 while getopts t: flag
 do
@@ -44,9 +44,9 @@ sudo apt install -y silversearcher-ag
 sudo snap install --classic ccls
 python3 -m pip install pynvim
 
-mkdir ~/.config/nvim/
-cp init.nvim ~/.config/nvim/
-cp -r autoload/ ~/.config/nvim/
-cp coc-settings.json ~/.config/nvim/
+mkdir $HOME/.config/nvim/
+cp init.vim $HOME/.config/nvim/
+cp -r autoload/ $HOME/.config/nvim/
+cp coc-settings.json $HOME/.config/nvim/
 
 echo "${BLUE}Done."
