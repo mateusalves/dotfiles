@@ -42,6 +42,7 @@ fi
 echo "${BLUE}Installing other dependencies."
 sudo apt install -y silversearcher-ag
 sudo snap install --classic ccls
+sudo cp /snap/bin/ccls /usr/bin/
 python3 -m pip install pynvim
 
 mkdir $HOME/.config/nvim/
