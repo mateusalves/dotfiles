@@ -22,7 +22,9 @@ All tools are with my own custom settings and themes I like.
 <img src="./img/nvim.png" width="738">
 </p>
 
-<center>**Screenshots on RaspberryOS**</center>
+<p align="center">
+Screenshots on RaspberryOS
+</p>
 
 ## Installation
 
