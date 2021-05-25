@@ -44,7 +44,7 @@ Finally, to automatically install it on RaspberryOS, please follow these steps:
 ```bash
 git clone git@github.com:mateusalves/dotfiles.git
 cd dotfiles/
-sh muryoukuusho.sh -t raspberry
+sh muryoukuusho.sh -t foo
 ```
 **Note:** This shell script will automatically install all dependencies. However, sometimes snap package does not work properly before reboot the system. In this case, please, reboot your machine and try again. =] 
 
