@@ -46,7 +46,7 @@ git clone git@github.com:mateusalves/dotfiles.git
 cd dotfiles/
 sh muryoukuusho.sh -t raspberry
 ```
-**Note:** This shell script will automatically install all dependencies. However, sometimes snap package does not work properly before reboot the sistem. In this case, please, reboot your machine and try again. =] 
+**Note:** This shell script will automatically install all dependencies. However, sometimes snap package does not work properly before reboot the system. In this case, please, reboot your machine and try again. =] 
 
 
 
