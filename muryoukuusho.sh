@@ -11,22 +11,20 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 sudo rm $HOME/.zshrc
-#sudo cp .zshrc $HOME
 chsh -s $(which zsh)
 
 echo "${PURPLE}Installing tmux."
 sudo apt install -y tmux
 sudo mv $HOME/.tmux.conf $HOME/.tmux.conf.backup
-#sudo cp .tmux.conf $HOME
 
 while getopts t: flag
 do
     case "${flag}" in
-        t) rasp=${OPTARG};;
+        t) rasp=${OPTARG}
     esac
 done
 
-if [ $rasp ]
+if [ "${rasp}" = "rasp" ]
 then
   echo "${PURPLE}Installing nvim on Raspberry."
   sudo apt install -y snapd
@@ -47,8 +45,6 @@ python3 -m pip install pynvim
 
 mkdir $HOME/.config/nvim/
 echo "${PURPLE}Moving folder to where it belongs and creating symlinks"
-#cp init.vim $HOME/.config/nvim/
-#cp coc-settings.json $HOME/.config/nvim/
 cp -r autoload/ $HOME/.config/nvim/
 ln -s $(pwd)/init.vim $HOME/.config/nvim/init.vim
 ln -s $(pwd)/coc-settings.json $HOME/.config/nvim/coc-settings.json
