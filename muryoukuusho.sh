@@ -43,7 +43,8 @@ sudo snap install --classic ccls
 sudo cp /snap/bin/ccls /usr/bin/
 python3 -m pip install pynvim
 
-mkdir $HOME/.config/nvim/
+mkdir $HOME/.config
+mkdir $HOME/.config/nvim
 echo "${PURPLE}Moving folder to where it belongs and creating symlinks"
 cp -r autoload/ $HOME/.config/nvim/
 ln -s $(pwd)/init.vim $HOME/.config/nvim/init.vim
