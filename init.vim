@@ -9,7 +9,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'w0rp/ale'
-Plug 'jiangmiao/auto-pairs'
+"Plug 'jiangmiao/auto-pairs'
 Plug 'preservim/nerdtree'
 Plug 'tsony-tsonev/nerdtree-git-plugin'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
@@ -21,7 +21,7 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'APZelos/blamer.nvim'
 "Plug 'ycm-core/YouCompleteMe'
-Plug 'tpope/vim-surround'
+"Plug 'tpope/vim-surround'
 Plug 'vim-syntastic/syntastic'
 Plug 'rafi/awesome-vim-colorschemes'
 Plug 'puremourning/vimspector'
@@ -75,6 +75,7 @@ augroup compileandrun
     autocmd filetype cpp nnoremap <leader><f4> :w <bar> !g++ -std=c++2a % <cr> :vnew <bar> :term "./a.out" <cr><cr>
     autocmd filetype cpp nnoremap <leader><f5> :w <bar> !g++ -g -Wall -std=c++1z % <cr><cr>
     autocmd filetype c nnoremap <leader><f4> :w <bar> !gcc -Wall % <cr> :vnew <bar> :term "./a.out" <cr><cr>
+    autocmd filetype c nnoremap <leader><f5> :w <bar> !gcc -g -Wall % <cr><cr>
     "autocmd filetype c nnoremap <leader><f4> :w <bar> !make %:r && ./%:r <cr>
     "-std=c++1x #2011 -std=c++1y #2014 -std=c++1z #2017 -std=c++2a #2020
 augroup END
