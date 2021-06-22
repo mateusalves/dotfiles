@@ -1,5 +1,19 @@
 PURPLE=$(printf '\033[35m')
 
+help(){
+  echo "Usage: $0 [OPTION]..."
+  echo "sh muryoukuusho.sh -t rasp"
+  exit 0
+}
+
+while getopts t:h flag
+do
+    case "${flag}" in
+        t) rasp=${OPTARG};;
+        h) help;;
+    esac
+done
+
 echo "${PURPLE}Updating and installing essential tools."
 sudo apt update && sudo apt -y upgrade && sudo apt -y autoremove
 sudo apt install -y build-essential libssl-dev libffi-dev python3-dev python3-pip xclip nodejs
@@ -16,13 +30,6 @@ chsh -s $(which zsh)
 echo "${PURPLE}Installing tmux."
 sudo apt install -y tmux
 sudo mv $HOME/.tmux.conf $HOME/.tmux.conf.backup
-
-while getopts t: flag
-do
-    case "${flag}" in
-        t) rasp=${OPTARG}
-    esac
-done
 
 if [ "${rasp}" = "rasp" ]
 then
