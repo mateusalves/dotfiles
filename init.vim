@@ -1,6 +1,6 @@
 call plug#begin()
 Plug 'morhetz/gruvbox'
-"Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'

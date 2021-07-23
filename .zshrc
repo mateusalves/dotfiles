@@ -111,5 +111,6 @@ alias vim=nvim
 alias vi=nvim
 alias v=nvim
 alias e=exit
+alias t=${HOME}/bin/tmux-sessionizer $(pwd)
 alias pbcopy='xclip -selection clipboard'
 alias pbpaste='xclip -selection clipboard -o'

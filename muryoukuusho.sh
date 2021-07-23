@@ -49,8 +49,10 @@ sudo apt install -y silversearcher-ag
 sudo snap install --classic ccls
 sudo cp /snap/bin/ccls /usr/bin/
 python3 -m pip install pynvim
+chmod +x tmux-sessionizer
 
 mkdir $HOME/.config
+mkdir $HOME/bin
 mkdir $HOME/.config/nvim
 echo "${PURPLE}Moving folder to where it belongs and creating symlinks"
 cp -r autoload/ $HOME/.config/nvim/
@@ -58,5 +60,6 @@ ln -s $(pwd)/init.vim $HOME/.config/nvim/init.vim
 ln -s $(pwd)/coc-settings.json $HOME/.config/nvim/coc-settings.json
 ln -s $(pwd)/.zshrc $HOME/.zshrc
 ln -s $(pwd)/.tmux.conf $HOME/.tmux.conf
+ln -s $(pwd)/tmux-sessionizer $HOME/bin/tmux-sessionizer
 
 echo "${PURPLE}Done."
