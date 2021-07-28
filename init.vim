@@ -117,6 +117,20 @@ nmap <leader>gs :vertical G<CR>
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<cR>gv=gv
 
+let t:is_transparent = 0
+function! Toggle_transparent_background()
+  if t:is_transparent == 0
+    hi Normal guibg=#111111 ctermbg=black
+    let t:is_transparent = 1
+    set background=dark
+  else
+    hi Normal guibg=NONE ctermbg=NONE
+    let t:is_transparent = 0
+  endif
+endfunction
+
+nnoremap <leader>tb :call Toggle_transparent_background()<CR>
+
 set smarttab
 set cindent
 set exrc
