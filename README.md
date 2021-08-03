@@ -1,4 +1,7 @@
 # Dotfiles (Mateus Alves)
+<p align="left">
+  <img alt="License" src="https://img.shields.io/static/v1?label=license&message=MIT&color=50fa7b&labelColor=0A1033">
+</p>
 Setting up a new developing environment from scracth to fit all your needs is one of the most rewarding experience one programmer might have. However, sometimes you may not have time to do it.
 
 This repo aims to simplify the process of setting up my configuration for Linux/RaspberryOS machines. If you want to give it a try, feel free to fork it and start creating your own customised machine setup.  
