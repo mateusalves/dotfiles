@@ -49,9 +49,11 @@ sudo apt install -y silversearcher-ag
 sudo snap install --classic ccls
 sudo cp /snap/bin/ccls /usr/bin/
 python3 -m pip install pynvim
+cd bin/
 chmod +x tmux-sessionizer
 chmod a+rx ultra-monitor
 sudo chown lightdm:lightdm ultra-monitor
+cd ..
 
 mkdir $HOME/.config
 mkdir $HOME/bin
@@ -62,7 +64,7 @@ ln -s $(pwd)/init.vim $HOME/.config/nvim/init.vim
 ln -s $(pwd)/coc-settings.json $HOME/.config/nvim/coc-settings.json
 ln -s $(pwd)/.zshrc $HOME/.zshrc
 ln -s $(pwd)/.tmux.conf $HOME/.tmux.conf
-ln -s $(pwd)/tmux-sessionizer $HOME/bin/tmux-sessionizer
-ln -s $(pwd)/ultra-monitor $HOME/bin/ultra-monitor
+ln -s $(pwd)/bin/tmux-sessionizer $HOME/bin/tmux-sessionizer
+ln -s $(pwd)/bin/ultra-monitor $HOME/bin/ultra-monitor
 
 echo "${PURPLE}Done."

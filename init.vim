@@ -59,6 +59,7 @@ nnoremap <c-s> :w<cr>
 inoremap <c-s> <ESC>:w<CR>
 
 nnoremap <c-b> :NERDTreeToggle<cr>
+nnoremap <leader><c-b> :NERDTreeFind<cr>
 nnoremap <leader>w :wq<cr>
 nnoremap <c-w> :wq<cr>
 nnoremap <leader>q :q!<cr>
