@@ -133,6 +133,11 @@ endfunction
 
 nnoremap <leader>tb :call Toggle_transparent_background()<CR>
 
+" switch higlight no matter the previous state
+nnoremap <leader>h :set hls! <cr>
+" hit '/' highlights then enter search mode
+nnoremap / :set hlsearch<cr>/
+
 set smarttab
 set cindent
 set exrc
