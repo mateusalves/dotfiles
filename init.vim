@@ -29,6 +29,7 @@ Plug 'mhinz/vim-startify'
 Plug 'wellle/tmux-complete.vim'
 Plug 'ryanoasis/vim-devicons'
 "Plug 'ThePrimeagen/vim-be-good'
+Plug 'voldikss/vim-floaterm'
 call plug#end()
 
 let g:gruvbox_contrast_dark = 'hard'
@@ -65,18 +66,18 @@ nnoremap <c-q> :q!<cr>
 nnoremap <leader><F3> :q!<cr>
 nnoremap <leader>vt :vsplit <bar> :term<cr>
 nnoremap <leader>ht :set splitbelow <bar> :split <bar> :term<cr>
+nnoremap <leader>ft :FloatermNew! --title=Terminal<cr>
 
 map <C-z> <plug>NERDCommenterToggle<CR>
 
 " run code for CP
 augroup compileandrun
     autocmd!
-    autocmd filetype python nnoremap <leader><f4> :w <bar> :!python3 % <cr>
-    autocmd filetype cpp nnoremap <leader><f4> :w <bar> !g++ -std=c++2a % <cr> :vnew <bar> :term "./a.out" <cr><cr>
-    autocmd filetype cpp nnoremap <leader><f5> :w <bar> !g++ -g -Wall -std=c++1z % <cr><cr>
-    autocmd filetype c nnoremap <leader><f4> :w <bar> !gcc -Wall % <cr> :vnew <bar> :term "./a.out" <cr><cr>
-    autocmd filetype c nnoremap <leader><f5> :w <bar> !gcc -g -Wall % <cr><cr>
-    "autocmd filetype c nnoremap <leader><f4> :w <bar> !make %:r && ./%:r <cr>
+    autocmd filetype python nnoremap <leader><f4> :FloatermNew! python3 % <cr>
+    autocmd filetype cpp nnoremap <leader><f4> :w <bar> !g++ -std=c++2a % <cr> :FloatermNew  --title=CPP "./a.out" <cr>
+    autocmd filetype cpp nnoremap <leader><f5> :w <bar> !g++ -g -Wall -std=c++1z % <cr><cr> :FloatermNew! --title=a.out <cr>
+    autocmd filetype c nnoremap <leader><f4> :w <bar> !gcc -Wall % <cr> :FloatermNew --title=C "./a.out" <cr>
+    autocmd filetype c nnoremap <leader><f5> :w <bar> !gcc -g -Wall % <cr><cr> :FloatermNew! --title=a.out <cr>
     "-std=c++1x #2011 -std=c++1y #2014 -std=c++1z #2017 -std=c++2a #2020
 augroup END
 
@@ -117,7 +118,8 @@ nmap <leader>gs :vertical G<CR>
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<cR>gv=gv
 
-let t:is_transparent = 0
+let t:is_transparent = 1
+
 function! Toggle_transparent_background()
   if t:is_transparent == 0
     hi Normal guibg=#111111 ctermbg=black
