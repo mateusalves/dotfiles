@@ -5,8 +5,10 @@ Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
+"Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+"Plug 'junegunn/fzf.vim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
 Plug 'sheerun/vim-polyglot'
 Plug 'w0rp/ale'
 Plug 'jiangmiao/auto-pairs'
@@ -53,8 +55,8 @@ inoremap <C-c> <esc>
 nnoremap <leader>sh :split<cr>
 nnoremap <leader>sj :vsplit<cr>
 
-nnoremap <c-p> :Files<cr>
-nnoremap <c-f> :Ag<space>
+"nnoremap <c-p> :Files<cr>
+"nnoremap <c-f> :Ag<space>
 nnoremap <c-s> :w<cr>
 inoremap <c-s> <ESC>:w<CR>
 
@@ -70,6 +72,14 @@ nnoremap <leader>ht :set splitbelow <bar> :split <bar> :term<cr>
 nnoremap <leader>ft :FloatermNew! --title=Terminal<cr>
 
 map <C-z> <plug>NERDCommenterToggle<CR>
+
+" Find files using Telescope command-line sugar.
+nnoremap <c-p> <cmd>Telescope find_files<cr>
+"nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <c-f> <cmd>Telescope live_grep<cr>
+"nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
 " run code for CP
 augroup compileandrun

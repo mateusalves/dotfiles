@@ -40,12 +40,13 @@ then
 else
   echo "${PURPLE}Installing nvim on PC."
   curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
-  sudo mv nvim.appimage /usr/local/bin/
+  sudo mv nvim.appimage /usr/local/bin/nvim
   chmod +x /usr/local/bin/nvim
 fi
 
 echo "${PURPLE}Installing other dependencies."
-sudo apt install -y silversearcher-ag
+#sudo apt install -y silversearcher-ag
+sudo apt install -y ripgrep
 sudo snap install --classic ccls
 sudo cp /snap/bin/ccls /usr/bin/
 python3 -m pip install pynvim
