@@ -60,6 +60,8 @@ inoremap <C-c> <esc>
 nnoremap <leader>sh :split<cr>
 nnoremap <leader>sj :vsplit<cr>
 
+nnoremap <leader>s :%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>
+nnoremap <leader>n :/\<<C-r><C-w>\><cr>
 "nnoremap <c-p> :Files<cr>
 "nnoremap <c-f> :Ag<space>
 nnoremap <c-s> :w<cr>
