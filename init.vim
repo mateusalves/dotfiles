@@ -108,7 +108,6 @@ nmap <leader>gd <Plug>(coc-definition)
 nmap <leader>gy <Plug>(coc-type-definition)
 nmap <leader>gi <Plug>(coc-implementation)
 nmap <leader>gr <Plug>(coc-references)
-nnoremap <leader><c-p> :GFiles<cr>
 
 " moves current line down or up
 nnoremap <leader>] ddp
@@ -134,6 +133,10 @@ nmap <leader>gs :vertical G<CR>
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<cR>gv=gv
 
+vnoremap <leader>p "_dP<cr>
+nnoremap <leader>d "_d<cr>
+vnoremap <leader>d "_d<cr>
+
 let t:is_transparent = 1
 
 function! Toggle_transparent_background()
@@ -146,6 +149,8 @@ function! Toggle_transparent_background()
     let t:is_transparent = 0
   endif
 endfunction
+
+nnoremap <leader><c-p> :lua require("telescope.builtin").find_files({hidden = true, file_ignore_patterns = {"^.git/"}, prompt_title = "~Dotfiles",cwd = "$HOME/versioning/dotfiles",}) <cr>
 
 nnoremap <leader>tb :call Toggle_transparent_background()<CR>
 
