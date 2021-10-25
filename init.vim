@@ -2,17 +2,14 @@ call plug#begin()
 Plug 'morhetz/gruvbox'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
+
 Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-"Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-"Plug 'junegunn/fzf.vim'
 
 "telescope requirements
-"Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
-"Plug 'nvim-telescope/telescope-fzy-native.nvim'
 
 Plug 'sheerun/vim-polyglot'
 Plug 'w0rp/ale'
@@ -22,20 +19,16 @@ Plug 'tsony-tsonev/nerdtree-git-plugin'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'preservim/nerdcommenter'
 Plug 'airblade/vim-gitgutter'
-"Plug 'mhinz/vim-signify'
 Plug 'tpope/vim-rhubarb'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'APZelos/blamer.nvim'
-"Plug 'ycm-core/YouCompleteMe'
-"Plug 'tpope/vim-surround'
 Plug 'vim-syntastic/syntastic'
 Plug 'rafi/awesome-vim-colorschemes'
 Plug 'puremourning/vimspector'
 Plug 'mhinz/vim-startify'
 Plug 'wellle/tmux-complete.vim'
 Plug 'ryanoasis/vim-devicons'
-"Plug 'ThePrimeagen/vim-be-good'
 Plug 'voldikss/vim-floaterm'
 call plug#end()
 
