@@ -7,8 +7,13 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 "Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 "Plug 'junegunn/fzf.vim'
+
+"telescope requirements
+"Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
+"Plug 'nvim-telescope/telescope-fzy-native.nvim'
+
 Plug 'sheerun/vim-polyglot'
 Plug 'w0rp/ale'
 Plug 'jiangmiao/auto-pairs'
@@ -86,9 +91,9 @@ augroup compileandrun
     autocmd!
     autocmd filetype python nnoremap <leader><f4> :FloatermNew! python3 % <cr>
     autocmd filetype cpp nnoremap <leader><f4> :w <bar> !g++ -std=c++2a % <cr> :FloatermNew  --title=CPP "./a.out" <cr>
-    autocmd filetype cpp nnoremap <leader><f5> :w <bar> !g++ -g -Wall -std=c++1z % <cr><cr> :FloatermNew! --title=a.out <cr>
+    autocmd filetype cpp nnoremap <leader><f5> :w <bar> :FloatermNew! --title=Terminal g++ -g -Wall -std=c++1z % <cr>
     autocmd filetype c nnoremap <leader><f4> :w <bar> !gcc -Wall % <cr> :FloatermNew --title=C "./a.out" <cr>
-    autocmd filetype c nnoremap <leader><f5> :w <bar> !gcc -g -Wall % <cr><cr> :FloatermNew! --title=a.out <cr>
+    autocmd filetype c nnoremap <leader><f5> :w <bar> :FloatermNew! --title=Terminal gcc -g -Wall % <cr><cr>
     "-std=c++1x #2011 -std=c++1y #2014 -std=c++1z #2017 -std=c++2a #2020
 augroup END
 
