@@ -308,6 +308,3 @@ let g:startify_list_order = [
     \ 'bookmarks',
     \ ]
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""'''
-" To Play Vim be good type in a empty file:
-" :VimBeGood
