@@ -55,8 +55,6 @@ nnoremap <leader>sj :vsplit<cr>
 
 nnoremap <leader>s :%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>
 nnoremap <leader>n :/\<<C-r><C-w>\><cr>
-"nnoremap <c-p> :Files<cr>
-"nnoremap <c-f> :Ag<space>
 nnoremap <c-s> :w<cr>
 inoremap <c-s> <ESC>:w<CR>
 
@@ -74,10 +72,8 @@ nnoremap <leader>ft :FloatermNew! --title=Terminal<cr>
 map <C-z> <plug>NERDCommenterToggle<CR>
 
 " Find files using Telescope command-line sugar.
-nnoremap <c-p> <cmd>Telescope find_files<cr>
-"nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <c-p> <cmd>lua require("telescope.builtin").find_files({hidden = true, no_ignore = true, file_ignore_patterns = {"^.git/"},}) <cr>
 nnoremap <c-f> <cmd>Telescope live_grep<cr>
-"nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
@@ -134,6 +130,9 @@ vnoremap <leader>d "_d<cr>
 
 let t:is_transparent = 1
 
+" entering with transparency
+autocmd VimEnter * :call Toggle_transparent_background()
+
 function! Toggle_transparent_background()
   if t:is_transparent == 0
     hi Normal guibg=#111111 ctermbg=black
@@ -149,10 +148,8 @@ nnoremap <leader><c-p> :lua require("telescope.builtin").find_files({hidden = tr
 
 nnoremap <leader>tb :call Toggle_transparent_background()<CR>
 
-" switch higlight no matter the previous state
-nnoremap <leader>h :set hls! <cr>
-" hit '/' highlights then enter search mode
-nnoremap / :set hlsearch<cr>/
+" toggle higlight
+nnoremap <leader>h :set invhlsearch <cr>
 
 set smarttab
 set cindent
