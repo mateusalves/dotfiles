@@ -32,6 +32,8 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'voldikss/vim-floaterm'
 call plug#end()
 
+source $HOME/.config/nvim/coc.vim
+
 let g:gruvbox_contrast_dark = 'hard'
 set background=dark
 
@@ -88,17 +90,8 @@ augroup compileandrun
     "-std=c++1x #2011 -std=c++1y #2014 -std=c++1z #2017 -std=c++2a #2020
 augroup END
 
-" Make <CR> auto-select the first completion item and notify coc.nvim to
-" format on enter, <cr> could be remapped by other vim plugin
-inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
-                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
-let g:coc_node_path = '/usr/bin/node'
-
-nmap <leader>gd <Plug>(coc-definition)
-nmap <leader>gy <Plug>(coc-type-definition)
-nmap <leader>gi <Plug>(coc-implementation)
-nmap <leader>gr <Plug>(coc-references)
+"let g:coc_node_path = '/usr/bin/node'
 
 " moves current line down or up
 nnoremap <leader>] ddp
