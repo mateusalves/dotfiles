@@ -62,6 +62,7 @@ mkdir $HOME/.config/nvim
 echo "${PURPLE}Moving folder to where it belongs and creating symlinks"
 cp -r autoload/ $HOME/.config/nvim/
 ln -s $(pwd)/init.vim $HOME/.config/nvim/init.vim
+ln -s $(pwd)/coc.vim $HOME/.config/nvim/coc.vim
 ln -s $(pwd)/coc-settings.json $HOME/.config/nvim/coc-settings.json
 ln -s $(pwd)/.zshrc $HOME/.zshrc
 ln -s $(pwd)/.tmux.conf $HOME/.tmux.conf
