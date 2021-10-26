@@ -38,7 +38,7 @@ call plug#end()
 source $HOME/.config/nvim/coc.vim
 
 nnoremap <leader>a :lua require("harpoon.mark").add_file()<CR>
-nnoremap <c-u> :lua require("harpoon.ui").toggle_quick_menu()<CR>
+nnoremap <c-h> :lua require("harpoon.ui").toggle_quick_menu()<CR>
 "nnoremap <c-r> :lua require("harpoon.cmd-ui").toggle_quick_menu()<CR>
 
 nnoremap <c-j> :lua require("harpoon.ui").nav_file(1)<CR>
@@ -158,7 +158,7 @@ nnoremap <leader><c-p> :lua require("telescope.builtin").find_files({hidden = tr
 nnoremap <leader>tb :call Toggle_transparent_background()<CR>
 
 " toggle higlight
-nnoremap <leader>h :set invhlsearch <cr>
+nnoremap <leader>th :set invhlsearch <cr>
 
 set smarttab
 set cindent
