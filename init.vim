@@ -11,6 +11,9 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 
+Plug 'nvim-lua/popup.nvim'
+Plug 'ThePrimeagen/harpoon'
+
 Plug 'sheerun/vim-polyglot'
 Plug 'w0rp/ale'
 Plug 'jiangmiao/auto-pairs'
@@ -33,6 +36,19 @@ Plug 'voldikss/vim-floaterm'
 call plug#end()
 
 source $HOME/.config/nvim/coc.vim
+
+nnoremap <leader>a :lua require("harpoon.mark").add_file()<CR>
+nnoremap <c-u> :lua require("harpoon.ui").toggle_quick_menu()<CR>
+"nnoremap <c-r> :lua require("harpoon.cmd-ui").toggle_quick_menu()<CR>
+
+nnoremap <c-j> :lua require("harpoon.ui").nav_file(1)<CR>
+nnoremap <c-k> :lua require("harpoon.ui").nav_file(2)<CR>
+nnoremap <c-l> :lua require("harpoon.ui").nav_file(3)<CR>
+nnoremap <c-;> :lua require("harpoon.ui").nav_file(4)<CR>
+"nnoremap <leader>tf :lua require("harpoon.term").gotoTerminal(1)<CR>
+"nnoremap <leader>td :lua require("harpoon.term").gotoTerminal(2)<CR>
+"nnoremap <leader>cf :lua require("harpoon.term").sendCommand(1, 1)<CR>
+"nnoremap <leader>cd :lua require("harpoon.term").sendCommand(1, 2)<CR>
 
 let g:gruvbox_contrast_dark = 'hard'
 set background=dark
