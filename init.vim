@@ -38,7 +38,7 @@ call plug#end()
 source $HOME/.config/nvim/coc.vim
 
 nnoremap <leader>a :lua require("harpoon.mark").add_file()<CR>
-nnoremap <c-h> :lua require("harpoon.ui").toggle_quick_menu()<CR>
+nnoremap <c-y> :lua require("harpoon.ui").toggle_quick_menu()<CR>
 "nnoremap <c-r> :lua require("harpoon.cmd-ui").toggle_quick_menu()<CR>
 
 nnoremap <c-j> :lua require("harpoon.ui").nav_file(1)<CR>
