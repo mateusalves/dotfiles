@@ -35,15 +35,18 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'voldikss/vim-floaterm'
 call plug#end()
 
+let mapleader="\<space>"
+
 source $HOME/.config/nvim/coc.vim
 
 nnoremap <leader>a :lua require("harpoon.mark").add_file()<CR>
 nnoremap <c-y> :lua require("harpoon.ui").toggle_quick_menu()<CR>
 "nnoremap <c-r> :lua require("harpoon.cmd-ui").toggle_quick_menu()<CR>
 
-nnoremap <c-j> :lua require("harpoon.ui").nav_file(1)<CR>
-nnoremap <c-k> :lua require("harpoon.ui").nav_file(2)<CR>
-nnoremap <c-l> :lua require("harpoon.ui").nav_file(3)<CR>
+nnoremap <leader>7 :lua require("harpoon.ui").nav_file(1)<CR>
+nnoremap <leader>8 :lua require("harpoon.ui").nav_file(2)<CR>
+nnoremap <leader>9 :lua require("harpoon.ui").nav_file(3)<CR>
+nnoremap <leader>0 :lua require("harpoon.ui").nav_file(4)<CR>
 "nnoremap <leader>tf :lua require("harpoon.term").gotoTerminal(1)<CR>
 "nnoremap <leader>td :lua require("harpoon.term").gotoTerminal(2)<CR>
 "nnoremap <leader>cf :lua require("harpoon.term").sendCommand(1, 1)<CR>
@@ -60,7 +63,6 @@ set inccommand=split
 set clipboard=unnamedplus " public copy/paste register
 set splitright
 
-let mapleader="\<space>"
 nnoremap <leader>; A;<esc>
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
