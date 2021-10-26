@@ -44,7 +44,6 @@ nnoremap <c-y> :lua require("harpoon.ui").toggle_quick_menu()<CR>
 nnoremap <c-j> :lua require("harpoon.ui").nav_file(1)<CR>
 nnoremap <c-k> :lua require("harpoon.ui").nav_file(2)<CR>
 nnoremap <c-l> :lua require("harpoon.ui").nav_file(3)<CR>
-nnoremap <c-;> :lua require("harpoon.ui").nav_file(4)<CR>
 "nnoremap <leader>tf :lua require("harpoon.term").gotoTerminal(1)<CR>
 "nnoremap <leader>td :lua require("harpoon.term").gotoTerminal(2)<CR>
 "nnoremap <leader>cf :lua require("harpoon.term").sendCommand(1, 1)<CR>
