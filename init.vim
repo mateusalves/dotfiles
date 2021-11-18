@@ -165,7 +165,7 @@ set smarttab
 set cindent
 set exrc
 set tabstop=4 softtabstop=4
-set shiftwidth=2
+set shiftwidth=4
 set expandtab
 set smartindent
 set noerrorbells
@@ -258,7 +258,7 @@ nmap <leader>tgh :GitGutterLineHighlightsToggle<CR>
 let g:gitgutter_show_msg_on_hunk_jumping = 1
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""'''
 nnoremap <leader>gds :vertical Gdiffsplit<CR>
-nnoremap <leader>gb :GBrowse<CR>
+"nnoremap <leader>gb :GBrowse<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""'''
 
 let g:blamer_enabled = 1
@@ -275,6 +275,7 @@ if !exists('g:airline_symbols')
     let g:airline_symbols = {}
 endif
 
+"ip addr show dev enp3s0 | grep 'inet[^6]' | awk '{print $2}' | sed -e 's#/24##'
 "let g:airline_section_b = airline#section#create(['%{sy#repo#get_stats_decorated()}',' » ','%{fugitive#head()}'])
 let g:airline_section_x = '%{strftime("%x, %H:%M")}'
 " unicode symbols
