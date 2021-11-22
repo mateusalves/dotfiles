@@ -1,0 +1,3 @@
+[submodule "ricing"]
+	path = ricing
+	url = git@github.com:mateusalves/unix-ricing.git
