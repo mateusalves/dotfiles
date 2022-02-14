@@ -107,7 +107,6 @@ augroup compileandrun
     "-std=c++1x #2011 -std=c++1y #2014 -std=c++1z #2017 -std=c++2a #2020
 augroup END
 
-
 "let g:coc_node_path = '/usr/bin/node'
 
 " moves current line down or up
@@ -133,10 +132,35 @@ nmap <leader>gj :diffget //3<CR>
 nmap <leader>gs :vertical G<CR>
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<cR>gv=gv
+nnoremap <leader>j :m .+1<CR>==
+nnoremap <leader>k :m .-2<CR>==
 
 vnoremap <leader>p "_dP<cr>
 nnoremap <leader>d "_d<cr>
 vnoremap <leader>d "_d<cr>
+
+" Copy from this point to the end of the line
+nnoremap Y y$
+
+" Keeping it centered
+nnoremap n nzzzv
+nnoremap N Nzzzv
+nnoremap J mzJ`z
+
+" Undo break points
+inoremap , ,<c-g>u
+inoremap . .<c-g>u
+inoremap ! !<c-g>u
+inoremap ( (<c-g>u
+inoremap [ [<c-g>u
+inoremap ) )<c-g>u
+inoremap ] ]<c-g>u
+inoremap ? ?<c-g>u
+
+" jumplist mutations
+nnoremap <expr> k (v:count > 5? "m'" . v:count : "") . 'k'
+nnoremap <expr> j (v:count > 5? "m'" . v:count : "") . 'j'
+
 
 let t:is_transparent = 1
 
