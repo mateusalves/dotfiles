@@ -65,7 +65,10 @@ set splitright
 
 nnoremap <leader>; A;<esc>
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+nnoremap <leader>br :vsplit /tmp/brestore.gdb<cr>
+nnoremap <leader>cg :vsplit /tmp/cmd.gdb<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
+nnoremap <leader>sc :set syntax=c<cr>
 
 inoremap <C-c> <esc>
 
@@ -74,6 +77,7 @@ nnoremap <leader>sj :vsplit<cr>
 
 nnoremap <leader>s :%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>
 nnoremap <leader>n :/\<<C-r><C-w>\><cr>
+vnoremap <leader>n y/\V<C-R>=escape(@",'/\')<CR><CR>
 nnoremap <c-s> :w<cr>
 inoremap <c-s> <ESC>:w<CR>
 
@@ -160,7 +164,6 @@ inoremap ? ?<c-g>u
 " jumplist mutations
 nnoremap <expr> k (v:count > 5? "m'" . v:count : "") . 'k'
 nnoremap <expr> j (v:count > 5? "m'" . v:count : "") . 'j'
-
 
 let t:is_transparent = 1
 
