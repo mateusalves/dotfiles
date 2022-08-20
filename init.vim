@@ -64,7 +64,7 @@ set clipboard=unnamedplus " public copy/paste register
 set splitright
 
 nnoremap <leader>; A;<esc>
-nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+nnoremap <leader>ev :e $MYVIMRC<cr>
 nnoremap <leader>br :vsplit /tmp/brestore.gdb<cr>
 nnoremap <leader>cg :vsplit /tmp/cmd.gdb<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
