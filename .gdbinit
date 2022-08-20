@@ -8,6 +8,12 @@ document jprint
     pretty print for nlohmann json lib
 end
 
+define pprint
+   printf "%s\n", $arg0
+end
+document pprint
+    pretty print for c
+end
 #TODO: implementar watch points e display saves
 
 define bsave

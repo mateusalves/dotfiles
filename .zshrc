@@ -113,3 +113,8 @@ alias v=nvim
 alias e=exit
 alias pbcopy='xclip -selection clipboard'
 alias pbpaste='xclip -selection clipboard -o'
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export FZF_DEFAULT_OPS="--extended"
+
+alias ts='${HOME}/bin/tmux-sessionizer '
