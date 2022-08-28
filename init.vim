@@ -1,5 +1,4 @@
 call plug#begin()
-Plug 'morhetz/gruvbox'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 
@@ -33,6 +32,7 @@ Plug 'mhinz/vim-startify'
 Plug 'wellle/tmux-complete.vim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'voldikss/vim-floaterm'
+Plug 'morhetz/gruvbox'
 call plug#end()
 
 let mapleader="\<space>"
@@ -184,6 +184,20 @@ endfunction
 nnoremap <leader><c-p> :lua require("telescope.builtin").find_files({hidden = true, file_ignore_patterns = {"^.git/"}, prompt_title = "~Dotfiles",cwd = "$HOME/versioning/dotfiles",}) <cr>
 
 nnoremap <leader>tb :call Toggle_transparent_background()<CR>
+
+" Get rid of anoying coc message
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+inoremap <silent><expr> <C-x><C-z> coc#pum#visible() ? coc#pum#stop() : "\<C-x>\<C-z>"
+" remap for complete to use tab and <cr>
+inoremap <silent><expr> <TAB>
+    \ coc#pum#visible() ? coc#pum#next(1):
+    \ <SID>check_back_space() ? "\<Tab>" :
+    \ coc#refresh()
+inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
+inoremap <silent><expr> <c-space> coc#refresh()
+
+hi CocSearch ctermfg=12 guifg=#18A3FF
+hi CocMenuSel ctermbg=109 guibg=#13354A
 
 " toggle higlight
 nnoremap <leader>th :set invhlsearch <cr>
