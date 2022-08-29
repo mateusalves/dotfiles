@@ -15,7 +15,7 @@ Plug 'ThePrimeagen/harpoon'
 
 Plug 'sheerun/vim-polyglot'
 Plug 'w0rp/ale'
-"Plug 'jiangmiao/auto-pairs'
+Plug 'jiangmiao/auto-pairs'
 Plug 'preservim/nerdtree'
 Plug 'tsony-tsonev/nerdtree-git-plugin'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
