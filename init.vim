@@ -15,7 +15,7 @@ Plug 'ThePrimeagen/harpoon'
 
 Plug 'sheerun/vim-polyglot'
 Plug 'w0rp/ale'
-Plug 'jiangmiao/auto-pairs'
+"Plug 'jiangmiao/auto-pairs'
 Plug 'preservim/nerdtree'
 Plug 'tsony-tsonev/nerdtree-git-plugin'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
@@ -33,6 +33,10 @@ Plug 'wellle/tmux-complete.vim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'voldikss/vim-floaterm'
 Plug 'morhetz/gruvbox'
+
+"Under tests
+Plug 'wellle/context.vim'
+"Plug 'nvim-treesitter/nvim-treesitter-context'
 call plug#end()
 
 let mapleader="\<space>"
@@ -334,6 +338,11 @@ set t_Co=256
 "colorscheme purify
 "colorscheme onedark
 colorscheme gruvbox
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""'''
+let g:context_enabled = 1
+let g:context_filetype_blacklist = []
+nnoremap <leader>ct :ContextToggle<cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""'''
 
