@@ -13,6 +13,7 @@ export ZSH="/home/$USER/.oh-my-zsh"
 #ZSH_THEME="agnoster"
 #ZSH_THEME="awesomepanda"
 ZSH_THEME="af-magic"
+#ZSH_THEME="geoffgarside"
 #ZSH_THEME="simple"
 #ZSH_THEME="risto"
 #ZSH_THEME="bureau"
@@ -118,3 +119,11 @@ alias pbpaste='xclip -selection clipboard -o'
 export FZF_DEFAULT_OPS="--extended"
 
 alias ts='${HOME}/bin/tmux-sessionizer '
+# git
+alias gap="git add -p"
+alias gc="git commit"
+alias gcm="git commit -m"
+alias gp="git push"
+alias gpu="git pull"
+alias gck="git checkout"
+
