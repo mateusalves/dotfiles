@@ -3,7 +3,7 @@ au FileType cpp nnoremap <silent> ;m :Focus make build -j 10<CR>:Dispatch<CR>
 au FileType cpp nnoremap <silent> ;r :Focus make run -j 10<CR>:Dispatch<CR>
 au FileType cpp nnoremap <silent> ;cm :Focus make clean; make build -j 10<CR>:Dispatch<CR>
 au FileType cpp nnoremap <silent> ;cr :Focus make clean; make run -j 10<CR>:Dispatch<CR>
-au FileType cpp nnoremap <silent> ;d :VimuxRunCommand "gdb ./a.out"<R>
+au FileType cpp nnoremap <silent> ;d :VimuxRunCommand "gdb ./a.out"<CR>
 au FileType cpp nnoremap <silent> ;dm :VimuxRunCommand "make build -j 10 && lldb ./bin/game"<CR>
 au FileType cpp nnoremap <silent> ;dc :VimuxRunCommand "make clean -j 10 && make build -j 10 && lldb ./bin/game"<CR>
 au FileType cpp nnoremap <silent> ;tm :VimuxRunCommand "make build -j 10"<CR>
@@ -157,11 +157,11 @@ imap <C-j> <Down>
 imap <C-k> <Up>
 imap <C-l> <Right>
 
-" same in normal mode
-nmap <C-h> <Left>
-nmap <C-j> <Down>
-nmap <C-k> <Up>
-nmap <C-l> <Right>
+" Use ctrl-[hjkl] to select the active split!
+nmap <silent> <c-k> :wincmd k<CR>
+nmap <silent> <c-j> :wincmd j<CR>
+nmap <silent> <c-h> :wincmd h<CR>
+nmap <silent> <c-l> :wincmd l<CR>
 
 " Syntax highlighting
 syntax on
@@ -343,6 +343,9 @@ nnoremap <leader>cg :vsplit /tmp/cmd.gdb<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
 nnoremap <leader>sc :set syntax=c<cr>
 
+nnoremap <leader>sh :split<cr>
+nnoremap <leader>sj :vsplit<cr>
+
 " Find files using Telescope command-line sugar.
 nnoremap <c-p> <cmd>lua require("telescope.builtin").find_files({hidden = true, no_ignore = true, file_ignore_patterns = {"^.git/"},}) <cr>
 nnoremap <c-f> <cmd>Telescope live_grep<cr>
@@ -358,7 +361,7 @@ inoremap <c-s> <ESC>:w<CR>
 nnoremap <c-b> :NERDTreeToggle<cr>
 nnoremap <leader><c-b> :NERDTreeFind<cr>
 nnoremap <leader>w :wq<cr>
-nnoremap <c-w> :wq<cr>
+"nnoremap <c-w> :wq<cr>
 nnoremap <leader>q :q!<cr>
 nnoremap <c-q> :q!<cr>
 nnoremap <leader><F3> :q!<cr>
@@ -390,7 +393,9 @@ nnoremap <leader>. :bn<cr>
 nnoremap <leader>, :bp<cr>
 nnoremap <leader>m :bd<cr>
 
-nnoremap <leader>+ :vertical resize +5<CR>
+nnoremap <leader>+ :resize +5<CR>
+nnoremap <leader>_ :resize -5<CR>
+nnoremap <leader>= :vertical resize +5<CR>
 nnoremap <leader>- :vertical resize -5<CR>
 nnoremap <leader>rp :resize 100<CR>
 

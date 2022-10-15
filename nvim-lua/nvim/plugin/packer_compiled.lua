@@ -79,6 +79,11 @@ _G.packer_plugins = {
     path = "/home/mateus/.local/share/nvim/site/pack/packer/start/badwolf",
     url = "https://github.com/sjl/badwolf"
   },
+  ["blamer.nvim"] = {
+    loaded = true,
+    path = "/home/mateus/.local/share/nvim/site/pack/packer/start/blamer.nvim",
+    url = "https://github.com/APZelos/blamer.nvim"
+  },
   ["cmp-buffer"] = {
     loaded = true,
     path = "/home/mateus/.local/share/nvim/site/pack/packer/start/cmp-buffer",
@@ -139,6 +144,16 @@ _G.packer_plugins = {
     path = "/home/mateus/.local/share/nvim/site/pack/packer/start/nerdcommenter",
     url = "https://github.com/preservim/nerdcommenter"
   },
+  nerdtree = {
+    loaded = true,
+    path = "/home/mateus/.local/share/nvim/site/pack/packer/start/nerdtree",
+    url = "https://github.com/preservim/nerdtree"
+  },
+  ["nerdtree-git-plugin"] = {
+    loaded = true,
+    path = "/home/mateus/.local/share/nvim/site/pack/packer/start/nerdtree-git-plugin",
+    url = "https://github.com/tsony-tsonev/nerdtree-git-plugin"
+  },
   ["nim.nvim"] = {
     loaded = true,
     path = "/home/mateus/.local/share/nvim/site/pack/packer/start/nim.nvim",
@@ -180,6 +195,11 @@ _G.packer_plugins = {
     path = "/home/mateus/.local/share/nvim/site/pack/packer/start/packer.nvim",
     url = "https://github.com/wbthomason/packer.nvim"
   },
+  ["plenary.nvim"] = {
+    loaded = true,
+    path = "/home/mateus/.local/share/nvim/site/pack/packer/start/plenary.nvim",
+    url = "https://github.com/nvim-lua/plenary.nvim"
+  },
   rainbow = {
     loaded = true,
     path = "/home/mateus/.local/share/nvim/site/pack/packer/start/rainbow",
@@ -189,6 +209,26 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/mateus/.local/share/nvim/site/pack/packer/start/rust.vim",
     url = "https://github.com/rust-lang/rust.vim"
+  },
+  ["telescope.nvim"] = {
+    loaded = true,
+    path = "/home/mateus/.local/share/nvim/site/pack/packer/start/telescope.nvim",
+    url = "https://github.com/nvim-telescope/telescope.nvim"
+  },
+  ["tmux-complete.vim"] = {
+    loaded = true,
+    path = "/home/mateus/.local/share/nvim/site/pack/packer/start/tmux-complete.vim",
+    url = "https://github.com/wellle/tmux-complete.vim"
+  },
+  ["vim-airline"] = {
+    loaded = true,
+    path = "/home/mateus/.local/share/nvim/site/pack/packer/start/vim-airline",
+    url = "https://github.com/vim-airline/vim-airline"
+  },
+  ["vim-airline-themes"] = {
+    loaded = true,
+    path = "/home/mateus/.local/share/nvim/site/pack/packer/start/vim-airline-themes",
+    url = "https://github.com/vim-airline/vim-airline-themes"
   },
   ["vim-better-whitespace"] = {
     loaded = true,
@@ -215,6 +255,11 @@ _G.packer_plugins = {
     path = "/home/mateus/.local/share/nvim/site/pack/packer/start/vim-easymotion",
     url = "https://github.com/easymotion/vim-easymotion"
   },
+  ["vim-floaterm"] = {
+    loaded = true,
+    path = "/home/mateus/.local/share/nvim/site/pack/packer/start/vim-floaterm",
+    url = "https://github.com/voldikss/vim-floaterm"
+  },
   ["vim-fugitive"] = {
     loaded = true,
     path = "/home/mateus/.local/share/nvim/site/pack/packer/start/vim-fugitive",
@@ -224,6 +269,16 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/mateus/.local/share/nvim/site/pack/packer/start/vim-gas",
     url = "https://github.com/Shirk/vim-gas"
+  },
+  ["vim-gitgutter"] = {
+    loaded = true,
+    path = "/home/mateus/.local/share/nvim/site/pack/packer/start/vim-gitgutter",
+    url = "https://github.com/airblade/vim-gitgutter"
+  },
+  ["vim-startify"] = {
+    loaded = true,
+    path = "/home/mateus/.local/share/nvim/site/pack/packer/start/vim-startify",
+    url = "https://github.com/mhinz/vim-startify"
   },
   ["vim-surround"] = {
     loaded = true,
