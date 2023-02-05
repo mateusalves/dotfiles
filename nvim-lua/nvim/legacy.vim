@@ -343,8 +343,8 @@ nnoremap <leader>cg :vsplit /tmp/cmd.gdb<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
 nnoremap <leader>sc :set syntax=c<cr>
 
-nnoremap <leader>sh :split<cr>
-nnoremap <leader>sj :vsplit<cr>
+nnoremap ;sh :split<cr>
+nnoremap ;sj :vsplit<cr>
 
 " Find files using Telescope command-line sugar.
 nnoremap <c-p> <cmd>lua require("telescope.builtin").find_files({hidden = true, no_ignore = true, file_ignore_patterns = {"^.git/"},}) <cr>
