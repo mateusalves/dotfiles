@@ -101,7 +101,9 @@ noremap <silent> ;w :update<CR>
 noremap <silent> ;f gg=G``:w<CR>
 
 " language-specific formatters
-au FileType cpp set formatprg=clang-format | set equalprg=clang-format
+au FileType cpp set formatprg=astyle | set equalprg=astyle
+au FileType c set formatprg=astyle | set equalprg=astyle
+au FileType json set formatprg=jq | set equalprg=jq
 
 let g:lion_squeeze_spaces = 1
 
@@ -238,7 +240,7 @@ autocmd BufRead,BufNewFile *.cpp SetTab 4
 autocmd BufRead,BufNewFile *.hpp SetTab 4
 
 " C/C++ indent options: fix extra indentation on function continuation
-set cino=(0,W4
+set cino=0{,0},(0,W4
 
 " colorcolumn 80, tab width 4 for shaders
 autocmd BufRead,BufNewFile *.sc setlocal colorcolumn=80 | SetTab 4
