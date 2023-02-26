@@ -99,6 +99,7 @@ noremap <silent> ;w :update<CR>
 
 ";f formats in normal mode
 noremap <silent> ;f gg=G``:w<CR>
+"noremap <silent> ;f gg=G
 
 " language-specific formatters
 au FileType cpp set formatprg=astyle | set equalprg=astyle
@@ -166,7 +167,7 @@ nmap <silent> <c-h> :wincmd h<CR>
 nmap <silent> <c-l> :wincmd l<CR>
 
 " Syntax highlighting
-syntax on
+"syntax on
 
 " Position in code
 set number
@@ -378,7 +379,7 @@ augroup compileandrun
     autocmd!
     autocmd filetype python nnoremap <leader><f4> :FloatermNew! python3 % <cr>
     autocmd filetype cpp nnoremap <leader><f4> :w <bar> !g++ -std=c++2a % <cr> :FloatermNew  --title=CPP "./a.out" <cr>
-    autocmd filetype cpp nnoremap <leader><f5> :w <bar> :FloatermNew! --title=Terminal g++ -g -Wall -std=c++1z % <cr>
+    autocmd filetype cpp nnoremap <leader><f5> :w <bar> :FloatermNew! --title=Terminal g++ -g -Wall -std=c++2a % <cr>
     autocmd filetype c nnoremap <leader><f4> :w <bar> !gcc -Wall % <cr> :FloatermNew --title=C "./a.out" <cr>
     autocmd filetype c nnoremap <leader><f5> :w <bar> :FloatermNew! --title=Terminal gcc -g -Wall % <cr>
     "-std=c++1x #2011 -std=c++1y #2014 -std=c++1z #2017 -std=c++2a #2020
