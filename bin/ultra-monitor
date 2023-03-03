@@ -1,8 +1,0 @@
-#/bin/bash
-if xrandr | grep -q "HDMI-0 connected"; then
-    xrandr --output HDMI-0 --primary --mode 2560x1080 --rate 75
-    xrandr --output eDP-1-1 --auto --left-of HDMI-0 &
-    xrandr --rate 75 &
-else
-    xrandr --output eDP-1-1 --primary --auto
-fi
