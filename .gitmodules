@@ -1,3 +1,6 @@
 [submodule "ricing"]
 	path = ricing
 	url = git@github.com:mateusalves/unix-ricing.git
+[submodule "init.lua"]
+	path = init.lua
+	url = git@github.com:mateusalves/init.lua.git
