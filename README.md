@@ -11,7 +11,7 @@
 
 ```
 ln -s $(pwd)/.tmux.conf ~/.tmux.conf
-ln -s $(pwd)/.zshrc ~/.tmux.zshrc
+ln -s $(pwd)/.zshrc ~/.zshrc
 ln -s $(pwd)/.gdbinit ~/.gdbinit
 # only after symlink from ricing
 ln -s $(pwd)/bin/tmux-sessionizer $HOME/bin/tmux-sessionizer
