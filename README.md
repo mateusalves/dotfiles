@@ -15,4 +15,5 @@ ln -s $(pwd)/.zshrc ~/.zshrc
 ln -s $(pwd)/.gdbinit ~/.gdbinit
 # only after symlink from ricing
 ln -s $(pwd)/bin/tmux-sessionizer $HOME/bin/tmux-sessionizer
+ln -s $(pwd)/config.yaml ~/.config/clangd
 ```
